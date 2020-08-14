@@ -1,6 +1,6 @@
 # 从 0 - 1 配置 TS 和 TS-ESLINT
 
-## [triumph-github 详细配置信息]（https://github.com/1597403461/TS-AND-ESLINT）
+## [triumph-github 详细配置信息](https://github.com/1597403461/TS-AND-ESLINT)
 
 ## 初始化
 
