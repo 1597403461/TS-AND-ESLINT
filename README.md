@@ -166,3 +166,5 @@ eslint-plugin-prettier: 将 prettier 作为 ESLint 规则来使用
 ## 参考链接
 
 [可能是目前最详细从零开始配置 TypeScript 项目的教程](https://mp.weixin.qq.com/s/PVr6Pjuf8Bm69xTLuqLxkw)
+
+[在Typescript项目中，如何优雅的使用ESLint和Prettier](https://segmentfault.com/a/1190000019661168)
