@@ -1,6 +1,6 @@
 # 从 0 - 1 配置 TS 和 TS-ESLINT
 
-## [triumph-github 详细配置信息](https://github.com/1597403461/TS-AND-ESLINT)
+## [triumph-github TS详细配置信息](https://github.com/1597403461/TS-AND-ESLINT)
 
 ## 初始化
 
@@ -12,6 +12,13 @@
 
 ## 安装 babel react ts 预设
 
+Babel 是 JavaScript 编译器。由于浏览器版本的不同导致兼容性问题，babel可以将最新的JS语法以及API编译成兼容绝大多数浏览器的代码。所以babel是必要配置。
+
+@babel/core是babel编译的核心插件
+@babel/preset-env是ES6转换ES5的预设插件
+@babel/preset-react是react的预设插件
+@babel/preset-typescript是TS的预设插件
+
 `npm i @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript -D`
 
 ## 安装 react react-dom
@@ -22,9 +29,23 @@
 
 `npm install --save-dev typescript awesome-typescript-loader source-map-loader`
 
-## 初始化 ts
+这些依赖会让TypeScript和webpack在一起良好地工作。
+
+awesome-typescript-loade r可以让 Webpack 使用 TypeScript 的标准配置文件 tsconfig.json 编译TypeScript 代码。
+
+source-map-loader使用TypeScript输出的sourcemap文件来告诉webpack何时生成自己 sourcemaps。 这就允许你在调试最终生成的文件时就好像在调试TypeScript源码一样。
+
+## 初始化 ts 创建ts配置文件 tsconfig.json
 
 `tsc --init`
+
+## 创建babelrc文件
+
+```js
+{
+    "presets": ["@babel/preset-env","@babel/preset-react","@babel/preset-typescript"]
+}
+```
 
 ## 创建 webpack.config.js 文件
 
@@ -146,6 +167,28 @@ eslint-plugin-prettier: 将 prettier 作为 ESLint 规则来使用
         }
     ]
 }
+```
+
+添加 .prettierrc 规则文件
+
+```js
+{
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 100,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": ".prettierrc",
+            "options": {
+                "parser": "json"
+            }
+        }
+    ],
+    "arrowParens": "avoid",
+    "trailingComma": "none"
+}
+
 ```
 
 ## commit规范代码
